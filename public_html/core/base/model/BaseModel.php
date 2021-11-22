@@ -169,13 +169,13 @@ abstract class BaseModel extends BaseModelMethods
                                $set = [])
     {
         $set['fields'] = (is_array($set['fields']) && !empty($set['fields'])) ? $set['fields'] : $_POST;
-        $set['files']  = (is_array($set['files']) && !empty($set['files'])) ? $set['files'] : false;
+        $set['files']  = (!empty($set['files']) && is_array($set['files'])) ? $set['files'] : false;
 
         if(!$set['fields'] && !$set['files']) return false;
 
-        $set['except'] = (is_array($set['except']) && !empty($set['except'])) ? $set['except'] : false;
+        $set['except'] = (!empty($set['except']) && is_array($set['except'])) ? $set['except'] : false;
 
-        if(!$set['all_rows'])
+        if(!isset($set['all_rows']))
         {
             if($set['where'])
             {
@@ -269,8 +269,8 @@ abstract class BaseModel extends BaseModelMethods
         else
         {
             $join_arr    = $this->createJoin($set, $table);
-            $join        = $join_arr['join']??'';
-            $join_tables = $join_arr['tables']??'';
+            $join        = $join_arr['join'] ?? '';
+            $join_tables = $join_arr['tables'] ?? '';
 
             $query = 'DELETE ' . $table . $join_tables . ' FROM ' . $table . ' ' . $join . ' ' . $where;
 

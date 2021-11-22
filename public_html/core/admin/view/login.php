@@ -54,7 +54,7 @@
 
     <?php if(!empty($_SESSION['res']['answer']))
     {
-         echo '<p style="color: red">' . $_SESSION['res']['answer'] . '</p>';
+         echo '<p style="color: red;text-align: center">' . $_SESSION['res']['answer'] . '</p>';
 
         unset($_SESSION['res']);
     }?>

@@ -6,3 +6,27 @@ Fault: 05-11-2021 23:49:01 - Отсутствует шаблон - core/admin/vi
 File C:\OpenServer\domains\hd.my\public_html\core\base\controller\BaseController.php
 In line 141
 
+Fault: 22-11-2021 11:06:19 - Неверное имя файла для подключения - core/user/controller/LoginController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 22-11-2021 11:09:35 - Неверное имя файла для подключения - core/user/controller/LoginController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 22-11-2021 11:10:02 - Неверное имя файла для подключения - core/user/controller/LoginController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 22-11-2021 11:11:57 - Неверное имя файла для подключения - core/user/controller/LoginController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 22-11-2021 11:22:18 - Неверное имя файла для подключения - core/base/model/AuthException
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 22-11-2021 11:23:08 - Неверное имя файла для подключения - core/base/model/AuthException
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+

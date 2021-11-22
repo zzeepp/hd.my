@@ -6,6 +6,8 @@ namespace core\base\model;
 
 use core\base\controller\BaseMethod;
 use core\base\controller\Singleton;
+use core\base\exceptions\AuthException;
+
 
 class UserModel extends BaseModel
 {
@@ -142,7 +144,7 @@ class UserModel extends BaseModel
 
         $data = json_decode(Crypt::instance()->decrypt($_COOKIE[$this->cookieName]), true);
 
-        if(empty($data['id']) || empty(data['version']) || empty(data['cookieTime']))
+        if(empty($data['id']) || empty($data['version']) || empty($data['cookieTime']))
         {
             $this->logout();
 

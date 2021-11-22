@@ -24,17 +24,12 @@ class LoginController extends BaseController
 
             $userLog = 'Выход пользователя ' . $this->userId['name'];
 
-            $this->writeLog($userLog, 'user_log.txt', user_log . txt);
+            $this->writeLog($userLog, 'user_log.txt', 'Access user');
             $this->model->logout();
             $this->redirect(PATH);
         }
 
-        $timeClean = (new \DateTime())->modify('-' . BLOCK_TIME . ' hour')->format('Y-m-d H:i:s');
 
-        $this->model->delete($this->model->getBlocketTable(), [
-            'where'   => ['time' => $timeClean],
-            'operand' => ['<']
-        ]);
 
         if($this->isPost())
         {
@@ -42,6 +37,14 @@ class LoginController extends BaseController
             {
                 exit('Куку охибка');
             }
+
+            //$timeClean = (new \DateTime())->modify('-' . BLOCK_TIME . ' hour')->format('Y-m-d H:i:s');
+            $timeClean = (new \DateTime())->modify('-1 seconds')->format('Y-m-d H:i:s');
+
+            $this->model->delete($this->model->getBlocketTable(), [
+                'where'   => ['time' => $timeClean],
+                'operand' => ['<']
+            ]);
 
             $ipUser = filter_var(@$_SERVER['HTTP_CLIENT_IP'], FILTER_VALIDATE_IP) ?:
                 (filter_var(@$_SERVER['HTTP_X_FORWARDED_FOR'], FILTER_VALIDATE_IP) ?:
@@ -55,7 +58,7 @@ class LoginController extends BaseController
             $trying  = !empty($trying) ? $this->cleanNum($trying[0]['trying']) : 0;
             $success = 0;
 
-            if(!empty($_POST['`login']) && !empty($_POST['password']) && $trying < 3)
+            if(!empty($_POST['login']) && !empty($_POST['password']) && $trying < 3)
             {
                 $login    = $this->clearStr($_POST['login']);
                 $password = md5($this->clearStr($_POST['password']));
@@ -76,7 +79,7 @@ class LoginController extends BaseController
                     if($trying)
                     {
                         $method      = 'edit';
-                        $where['id'] = $ipUser;
+                        $where['ip'] = $ipUser;
                     }
 
                     $this->model->$method($this->model->getBlocketTable(), [
@@ -106,6 +109,7 @@ class LoginController extends BaseController
             }
             elseif($trying >= 3)
             {
+                $this->model->logout();
                 $error = 'Превышено максимальное значение попыток ввода пароля - ' . $ipUser;
             }
             else
@@ -113,7 +117,7 @@ class LoginController extends BaseController
                 $error = 'Поля не заполнены.';
             }
 
-            $_SESSION['res']['answer'] = $success ? '<div class="success">Добро пожаловать ' . $userData['name'] . '</div>' : preg_split('/\s*\-/', $error, 2, PREG_SPLIT_NO_EMPTY)[0];
+            $_SESSION['res']['answer'] = $success ? '<div class="success">Добро пожаловать ' . $userData[0]['name'] . '</div>' : preg_split('/\s*\-/', $error, 2, PREG_SPLIT_NO_EMPTY)[0];
 
             $this->writeLog($error, 'user_log.txt', 'Access user');
 

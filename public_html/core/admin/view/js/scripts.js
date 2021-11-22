@@ -382,7 +382,7 @@ function showHideMenuSearch()
 
     searchInput.addEventListener('blur', e =>
     {
-        if(e.relatedTarget&&e.relatedTarget.tagName==='A') return;
+        if (e.relatedTarget && e.relatedTarget.tagName === 'A') return;
 
         searchBtn.classList.remove('vg-search-reverse')
     }) //blur событие, которое отвечает за потерю фокуса
@@ -425,7 +425,7 @@ let searchResultHover = (() =>
 
             children[activeIndex].classList.add('search_act')
 
-            searchInput.value = children[activeIndex].innerText.replace(/\(.+?\)\s*$/,'');
+            searchInput.value = children[activeIndex].innerText.replace(/\(.+?\)\s*$/, '');
         }
 
     }
@@ -552,55 +552,69 @@ function createJsSortable(form)
         if (sortable.length)
         {
 
-            sortable.forEach(item =>
-                             {
-                                 let container = item.closest('.gallery_container')
-                                 let name      = item.getAttribute('name')
+            sortable.forEach(
+                item =>
+                {
+                    let container = item.closest('.gallery_container')
+                    let name      = item.getAttribute('name')
 
-                                 if (name && container)
-                                 {
-                                     name = name.replace(/\[\]/g, '')
+                    if (name && container)
+                    {
+                        name = name.replace(/\[\]/g, '')
 
-                                     let inputSorting = form.querySelector(`input[name="js-sorting[${name}]"]`)
+                        let inputSorting = form.querySelector(`input[name="js-sorting[${name}]"]`)
 
-                                     if (!inputSorting)
-                                     {
-                                         inputSorting = document.createElement('input')
+                        if (!inputSorting)
+                        {
+                            inputSorting = document.createElement('input')
 
-                                         inputSorting.name = `js-sorting[${name}]`
+                            inputSorting.name = `js-sorting[${name}]`
 
-                                         form.append(inputSorting)
-                                     }
+                            form.append(inputSorting)
+                        }
 
-                                     let res = []
+                        let res = []
 
-                                     for (let i in container.children)
-                                     {
-                                         if (container.children.hasOwnProperty(i))
-                                         {
-                                             if (!container.children[i].matches('label') && !container.children[i].matches('.empty_container')) //если не
-                                                 // соответствует селектору label
-                                             {
-                                                 if (container.children[i].tagName === 'A')
-                                                 {
-                                                     res.push(container.children[i].querySelector('img').getAttribute('src'))
+                        for (let i in container.children)
+                        {
+                            if (container.children.hasOwnProperty(i))
+                            {
+                                if (!container.children[i].matches('label') && !container.children[i].matches('.empty_container')) //если не
+                                    // соответствует селектору label
+                                {
+                                    if (container.children[i].tagName === 'A')
+                                    {
+                                        res.push(container.children[i].querySelector('img').getAttribute('src'))
 
-                                                 }
-                                                 else
-                                                 {
-                                                     res.push(container.children[i].getAttribute(`data-deletefileid-${name}`))
+                                    }
+                                    else
+                                    {
+                                        res.push(container.children[i].getAttribute(`data-deletefileid-${name}`))
 
-                                                 }
-                                             }
-                                         }
-                                     }
+                                    }
+                                }
+                            }
+                        }
 
-                                     inputSorting.value = JSON.stringify(res)
-                                 }
-                             })
+                        inputSorting.value = JSON.stringify(res)
+                    }
+                })
         }
     }
 }
+
+document.addEventListener('DOMContentLoaded', () =>
+{
+    function hideMessages()
+    {
+        document.querySelectorAll('.success,.error').forEach(
+            item => item.remove());
+
+        document.removeEventListener('click', hideMessages)
+    }
+
+    document.addEventListener('click', hideMessages)
+})
 
 
 

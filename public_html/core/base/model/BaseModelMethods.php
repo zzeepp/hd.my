@@ -174,14 +174,14 @@ abstract class BaseModelMethods
             {
                 $where .= ' ';
 
-                if($set['operand'][$o_count])
+                if(isset($set['operand'][$o_count]))
                 {
                     $operand = $set['operand'][$o_count];
                     $o_count++;
                 }
                 else $operand = $set['operand'][$o_count - 1];
 
-                if($set['condition'][$c_count])
+                if(isset($set['condition'][$c_count]))
                 {
                     $condition = $set['condition'][$c_count];
                     $c_count++;

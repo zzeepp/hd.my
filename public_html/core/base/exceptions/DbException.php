@@ -12,13 +12,14 @@ class DbException extends \Exception
 
     protected $messages;
 
-    public function __construct($message = "", $code = 0)
+    public function __construct($message = "",
+                                $code = 0)
     {
         parent::__construct($message, $code);
 
         $this->messages = include 'messages.php';
 
-        $error = $this->getMessage() ? $this->getMessage()  : $this->messages[$this->code];
+        $error = $this->getMessage() ? $this->getMessage() : $this->messages[$this->code];
 
         $error .= "\r\n" . 'File ' . $this->getFile() . "\r\n" . 'In line ' . $this->getLine() . "\r\n";
 
@@ -29,6 +30,4 @@ class DbException extends \Exception
 
         $this->writeLog($error, 'dblog.txt');
     }
-
-
 }

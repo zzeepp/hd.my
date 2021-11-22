@@ -90,7 +90,7 @@
                     </div>
                 </div>
                 <a
-                        href="/login/admin/logout/1"
+                        href="<?= PATH . \core\base\settings\Settings::get('routes')['admin']['alias']?>/login/logout/1"
                         class="vg-element vg-half vg-center"
                 >
                     <div>

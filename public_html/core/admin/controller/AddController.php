@@ -8,8 +8,6 @@ class AddController extends BaseAdmin
 {
     protected $action   = 'add';
 
-
-
     protected function inputData()
     {
         if (!$this->userId) $this->execBase();
@@ -23,8 +21,5 @@ class AddController extends BaseAdmin
         $this->createManyToMany();
 
         return $this->expansion();
-
     }
-
-
 }
