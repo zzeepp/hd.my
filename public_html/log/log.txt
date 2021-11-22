@@ -1,0 +1,8 @@
+Fault: 05-11-2021 23:42:01 - Отсутствует шаблон - core/admin/view/login
+File C:\OpenServer\domains\hd.my\public_html\core\base\controller\BaseController.php
+In line 141
+
+Fault: 05-11-2021 23:49:01 - Отсутствует шаблон - core/admin/view/login
+File C:\OpenServer\domains\hd.my\public_html\core\base\controller\BaseController.php
+In line 141
+
