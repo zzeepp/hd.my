@@ -1,9 +1,6 @@
 const Ajax = (set) =>
 {
-    if (typeof set === "undefined")
-    {
-        set = {};
-    }
+    if (typeof set === "undefined") set = {};
 
     if (typeof set.url === "undefined" || !set.url)
     {
@@ -34,7 +31,6 @@ const Ajax = (set) =>
                 {
                     body += '&' + i + '=' + set.data[i];
                 }
-
             }
 
             body = body.substr(1);
@@ -53,64 +49,60 @@ const Ajax = (set) =>
         body = null;
     }
 
-    return new Promise((resolve, reject) =>
-                       {
-                           let xhr = new XMLHttpRequest();
-                           xhr.open(set.type, set.url, true);
+    return new Promise(
+        (resolve, reject) =>
+        {
+            let xhr = new XMLHttpRequest();
+            xhr.open(set.type, set.url, true);
 
-                           let contentType = false;
+            let contentType = false;
 
-                           if (typeof set.headers !== "undefined" && set.headers)
-                           {
-                               for (let i in set.headers)
-                               {
-                                   if (set.headers.hasOwnProperty(i))
-                                   {
-                                       xhr.setRequestHeader(i, set.headers[i]);
+            if (typeof set.headers !== "undefined" && set.headers)
+            {
+                for (let i in set.headers)
+                {
+                    if (set.headers.hasOwnProperty(i))
+                    {
+                        xhr.setRequestHeader(i, set.headers[i]);
 
-                                       if (i.toLowerCase() === 'content-type')
-                                       {
-                                           contentType = true;
-                                       }
-                                   }
+                        if (i.toLowerCase() === 'content-type') contentType = true;
+                    }
+                }
+            }
 
-                               }
+            if (!contentType && (typeof set.contentType === 'undefined' || set.contentType))
+            {
+                xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+            }
 
-                           }
+            if (set.ajax)
+            {
+                xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+            }
 
-                           if (!contentType && (typeof set.contentType === 'undefined' || set.contentType))
-                           {
-                               xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-                           }
+            xhr.onload = function ()
+            {
+                if (this.status >= 200 && this.status < 300)
+                {
+                    if (/fatal\s+?error/ui.test(this.response))
+                    {
+                        reject(this.response);
+                    }
 
-                           if (set.ajax)
-                           {
-                               xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-                           }
+                    resolve(this.response);
+                }
 
-                           xhr.onload = function ()
-                           {
-                               if (this.status >= 200 && this.status < 300)
-                               {
-                                   if (/fatal\s+?error/ui.test(this.response))
-                                   {
-                                       reject(this.response);
-                                   }
+                reject(this.response);
+            }
 
-                                   resolve(this.response);
-                               }
-
-                               reject(this.response);
-                           }
-
-                           xhr.onerror = function ()
-                           {
-                               reject(this.response);
-                           }
-                           xhr.send(body);
+            xhr.onerror = function ()
+            {
+                reject(this.response);
+            }
+            xhr.send(body);
 
 
-                       });
+        });
 
 }
 
@@ -121,7 +113,6 @@ function isEmpty(arr)
         return false
     }
 
-
     return true
 }
 
@@ -129,7 +120,6 @@ function errorAlert()
 {
     alert('произошла внутренняя ошибка')
     return false
-
 }
 
 Element.prototype.slideToggle = function (time, callback)
@@ -147,23 +137,25 @@ Element.prototype.slideToggle = function (time, callback)
         this.style.transition = time + 'ms'
         this.style.maxHeight  = this.scrollHeight + 'px'
 
-        setTimeout(() =>
-                   {
-                       callback && callback()
-                   }, _time)
+        setTimeout(
+            () =>
+            {
+                callback && callback()
+            }, _time)
     }
     else
     {
         this.style.transition = time + 'ms'
         this.style.maxHeight  = 0;
 
-        setTimeout(() =>
-                   {
-                       this.style.transition = null
-                       this.style.display    = 'none'
+        setTimeout(
+            () =>
+            {
+                this.style.transition = null
+                this.style.display    = 'none'
 
-                       callback && callback()
-                   }, _time)
+                callback && callback()
+            }, _time)
     }
 }
 
@@ -218,7 +210,6 @@ Element.prototype.sortable = (function ()
             target = e.target.closest('[draggable=true]')
         }
 
-
         if (target && target !== dragEl && target.parentElement === this)
         {
             // получаем координаты
@@ -250,29 +241,28 @@ Element.prototype.sortable = (function ()
 
         let excludedElements = options.excludedElements && options.excludedElements.split(/,*\s+/) || null;
 
-        [...this.children].forEach(item =>
-                                   {
-                                       let draggable = true
+        [...this.children].forEach(
+            item =>
+            {
+                let draggable = true
 
-                                       if (excludedElements)
-                                       {
-                                           for (let i in excludedElements)
-                                           {
-                                               if (excludedElements.hasOwnProperty(i) && item.matches(excludedElements[i]))
-                                               {
-                                                   draggable = false
+                if (excludedElements)
+                {
+                    for (let i in excludedElements)
+                    {
+                        if (excludedElements.hasOwnProperty(i) && item.matches(excludedElements[i]))
+                        {
+                            draggable = false
 
-                                                   break
-                                               }
-                                           }
-                                       }
+                            break
+                        }
+                    }
+                }
 
-                                       item.draggable = draggable
+                item.draggable = draggable
 
-                                       _unDraggable(item.children)
-
-
-                                   })
+                _unDraggable(item.children)
+            })
 
         this.removeEventListener('dragstart', _onDragStart, false)
         this.addEventListener('dragstart', _onDragStart, false)
