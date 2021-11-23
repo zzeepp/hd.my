@@ -18,8 +18,6 @@ function createSitemap()
          })
         .then((res) =>
               {
-
-
               })
         .catch((res) =>
                {
@@ -36,81 +34,75 @@ function createFile()
 
     if (files.length)
     {
-        files.forEach(item =>
-                      {
-                          item.onchange = function ()
-                          {
-                              let multiple = false
-                              let parentContainer
-                              let container
+        files.forEach(
+            item =>
+            {
+                item.onchange = function ()
+                {
+                    let multiple = false
+                    let parentContainer
+                    let container
 
-                              if (item.hasAttribute('multiple'))
-                              {
-                                  multiple        = true
-                                  parentContainer = this.closest('.gallery_container')
+                    if (item.hasAttribute('multiple'))
+                    {
+                        multiple        = true
+                        parentContainer = this.closest('.gallery_container')
 
-                                  if (!parentContainer) return false
+                        if (!parentContainer) return false
 
-                                  container = parentContainer.querySelectorAll('.empty_container')
+                        container = parentContainer.querySelectorAll('.empty_container')
 
-                                  if (container.length < this.files.length)
-                                  {
-                                      for (let index = 0; index < this.files.length - container.length; index++)
-                                      {
-                                          let el = document.createElement('div')
-                                          el.classList.add('vg-dotted-square', 'vg-center', 'empty_container')
-                                          parentContainer.append(el)
-                                      }
+                        if (container.length < this.files.length)
+                        {
+                            for (let index = 0; index < this.files.length - container.length; index++)
+                            {
+                                let el = document.createElement('div')
+                                el.classList.add('vg-dotted-square', 'vg-center', 'empty_container')
+                                parentContainer.append(el)
+                            }
 
-                                      container = parentContainer.querySelectorAll('.empty_container')
-                                  }
-                              }
+                            container = parentContainer.querySelectorAll('.empty_container')
+                        }
+                    }
 
-                              let fileName      = item.name
-                              let attributeName = fileName.replace(/[\[\]]/g, '')
+                    let fileName      = item.name
+                    let attributeName = fileName.replace(/[\[\]]/g, '')
 
-                              for (let i in this.files)
-                              {
-                                  if (this.files.hasOwnProperty(i))
-                                  {
-                                      if (multiple)
-                                      {
-                                          if (typeof fileStore[fileName] === 'undefined') fileStore[fileName] = []
+                    for (let i in this.files)
+                    {
+                        if (this.files.hasOwnProperty(i))
+                        {
+                            if (multiple)
+                            {
+                                if (typeof fileStore[fileName] === 'undefined') fileStore[fileName] = []
 
-                                          let elId = fileStore[fileName].push(this.files[i]) - 1
+                                let elId = fileStore[fileName].push(this.files[i]) - 1
 
-                                          container[i].setAttribute(`data-deletefileid-${attributeName}`, elId)
+                                container[i].setAttribute(`data-deletefileid-${attributeName}`, elId)
 
-                                          showImage(this.files[i], container[i], function ()
-                                          {
-                                              parentContainer.sortable(
-                                                  {
-                                                      excludedElements: 'label .empty_container'
-                                                  })
-                                          })
-                                          deleteNewFiles(elId, fileName, container[i])
+                                showImage(this.files[i], container[i], function ()
+                                {
+                                    parentContainer.sortable(
+                                        {
+                                            excludedElements: 'label .empty_container'
+                                        })
+                                })
+                                deleteNewFiles(elId, fileName, container[i])
+                            }
+                            else
+                            {
+                                container = this.closest('.img_container').querySelector('.img_show')
+                                showImage(this.files[i], container)
+                            }
+                        }
+                    }
+                }
 
+                //drag and drop на контейнер img_wrapper
+                let area = item.closest('.img_wrapper')
 
-                                      }
-                                      else
-                                      {
-                                          container = this.closest('.img_container').querySelector('.img_show')
-
-                                          showImage(this.files[i], container)
-
-                                      }
-                                  }
-                              }
-                          }
-
-                          //drag and drop на контейнер img_wrapper
-                          let area = item.closest('.img_wrapper')
-
-                          if (area)
-                          {
-                              dragAndDrop(area, item) // item это inputtypefile
-                          }
-                      })
+                if (area) dragAndDrop(area, item) // item это inputtypefile
+            })
 
         let form = document.querySelector('#main-form')
 
@@ -118,7 +110,6 @@ function createFile()
         {
             form.onsubmit = function (e)
             {
-
                 createJsSortable(form)
 
                 if (!isEmpty(fileStore))
@@ -135,11 +126,11 @@ function createFile()
 
                             let rowName = i.replace(/[\[\]]/g, '')
 
-                            fileStore[i].forEach((item, index) =>
-                                                 {
-                                                     forData.append(`${rowName}[${index}]`, item)
-                                                 })
-
+                            fileStore[i].forEach(
+                                (item, index) =>
+                                {
+                                    forData.append(`${rowName}[${index}]`, item)
+                                })
                         }
                     }
 
@@ -153,27 +144,23 @@ function createFile()
                             processData: false,
                             contentType: false
 
-                        }).then(res =>
-                                {
-                                    try
-                                    {
-                                        res = JSON.parse(res)
+                        }).then(
+                        res =>
+                        {
+                            try
+                            {
+                                res = JSON.parse(res)
 
-                                        if (!res.success) throw new Error()
+                                if (!res.success) throw new Error()
 
-                                        location.reload()
-
-                                    }
-                                    catch (e)
-                                    {
-                                        alert('произошла внутренняя ошибка')
-                                    }
-
-                                })
-
-
+                                location.reload()
+                            }
+                            catch (e)
+                            {
+                                alert('произошла внутренняя ошибка')
+                            }
+                        })
                 }
-
             }
         }
 
@@ -192,7 +179,6 @@ function createFile()
 
                 callback && callback()
             }
-
         }
 
         function deleteNewFiles(elId, fileName, container)
@@ -212,34 +198,33 @@ function createFile()
             //['dragleave']    возникает, когда файл покидает нужную область
             //['drop']         возникает, когда отпускаем указатель мыши и  файл падает в нужную область
 
-            ['dragenter', 'dragover', 'dragleave', 'drop'].forEach((eventName, index) =>
-                                                                   {
-                                                                       area.addEventListener(eventName, e =>
-                                                                       {
-                                                                           e.preventDefault()
-                                                                           e.stopPropagation() //блокируем всплытие
-                                                                                               // события
+            ['dragenter',
+             'dragover',
+             'dragleave',
+             'drop'].forEach((eventName, index) =>
+                             {
+                                 area.addEventListener(eventName, e =>
+                                 {
+                                     e.preventDefault()
+                                     e.stopPropagation() //блокируем всплытие
+                                                         // события
+                                     if (index < 2) area.style.background = 'lightblue'
+                                     else
+                                     {
+                                         area.style.background = '#ffffff'
 
-                                                                           if (index < 2)
-                                                                           {
-                                                                               area.style.background = 'lightblue'
-                                                                           }
-                                                                           else
-                                                                           {
-                                                                               area.style.background = '#ffffff'
+                                         if (index === 3)
+                                         {
+                                             input.files = e.dataTransfer.files
 
-                                                                               if (index === 3)
-                                                                               {
-                                                                                   input.files = e.dataTransfer.files
+                                             input.dispatchEvent(new Event('change'))
 
-                                                                                   input.dispatchEvent(new Event('change'))
-
-                                                                               }
-                                                                           }
+                                         }
+                                     }
 
 
-                                                                       })
-                                                                   })
+                                 })
+                             })
         }
 
     }
@@ -270,7 +255,6 @@ function changeMenuPosition()
                 {
                     defaultChoose = true
                 }
-
                 Ajax({
                          data: {
                              table      : form.querySelector('input[name=table]').value,
@@ -297,14 +281,11 @@ function changeMenuPosition()
                                      let selected = defaultChoose && i === defaultPosition ? 'selected' : ''
                                      newSelect.insertAdjacentHTML('beforeend', `<option ${selected} value="${i}">${i}</option>`)
                                  }
-
                                  selectPosition.before(newSelect)
 
                                  selectPosition.remove()
 
                                  selectPosition = newSelect
-
-
                              })
             })
         }
@@ -333,11 +314,9 @@ function blockParameters()
                          {
                              item.addEventListener('click', e =>
                              {
-
                                  if (!e.target.classList.contains('select_all'))
                                  {
                                      next.slideToggle()
-
                                  }
                                  else
                                  {
@@ -353,7 +332,6 @@ function blockParameters()
                                      next.querySelectorAll('input[type=checkbox]').forEach(el => el.checked = selectAllIndex[index])
 
                                  }
-
                              })
                          }
                      })
@@ -416,10 +394,7 @@ let searchResultHover = (() =>
             {
                 activeIndex = activeIndex <= 0 ? children.length - 1 : --activeIndex
             }
-            else
-            {
-                activeIndex = activeIndex === children.length - 1 ? 0 : ++activeIndex
-            }
+            else activeIndex = activeIndex === children.length - 1 ? 0 : ++activeIndex
 
             children.forEach(item => item.classList.remove('search_act'))
 
@@ -427,7 +402,6 @@ let searchResultHover = (() =>
 
             searchInput.value = children[activeIndex].innerText.replace(/\(.+?\)\s*$/, '');
         }
-
     }
 
     function setDefaultValue(e)
@@ -448,17 +422,18 @@ let searchResultHover = (() =>
         {
             let children = [...searchRes.children]
 
-            children.forEach(item =>
-                             {
-                                 item.addEventListener('mouseover', () =>
-                                 {
-                                     children.forEach(el => el.classList.remove('search_act'))
+            children.forEach(
+                item =>
+                {
+                    item.addEventListener('mouseover', () =>
+                    {
+                        children.forEach(el => el.classList.remove('search_act'))
 
-                                     item.classList.add('search_act')
+                        item.classList.add('search_act')
 
-                                     searchInput.value = item.innerText
-                                 })
-                             })
+                        searchInput.value = item.innerText
+                    })
+                })
         }
 
     }
@@ -506,9 +481,7 @@ function search()
                                    {
                                        resBlok.insertAdjacentHTML('beforeend', '<a href="' + res[i]['alias'] + '">' + res[i]['name'] + '</a>');
                                    }
-
                                    searchResultHover();
-
                                }
                            }
                            catch (e)
@@ -526,18 +499,19 @@ let galleries = document.querySelectorAll('.gallery_container')
 
 if (galleries.length)
 {
-    galleries.forEach(item =>
-                      {
-                          item.sortable(
-                              {
-                                  excludedElements: 'label .empty_container',
-                                  stop            : function (dragEl)
-                                  {
+    galleries.forEach(
+        item =>
+        {
+            item.sortable(
+                {
+                    excludedElements: 'label .empty_container',
+                    stop            : function (dragEl)
+                    {
 
-                                  }
-                              }
-                          )
-                      })
+                    }
+                }
+            )
+        })
 }
 
 //document.querySelector('.vg-rows > div').sortable()
@@ -546,12 +520,10 @@ function createJsSortable(form)
 {
     if (form)
     {
-
         let sortable = form.querySelectorAll('input[type=file][multiple]')
 
         if (sortable.length)
         {
-
             sortable.forEach(
                 item =>
                 {
@@ -585,17 +557,11 @@ function createJsSortable(form)
                                     if (container.children[i].tagName === 'A')
                                     {
                                         res.push(container.children[i].querySelector('img').getAttribute('src'))
-
                                     }
-                                    else
-                                    {
-                                        res.push(container.children[i].getAttribute(`data-deletefileid-${name}`))
-
-                                    }
+                                    else res.push(container.children[i].getAttribute(`data-deletefileid-${name}`))
                                 }
                             }
                         }
-
                         inputSorting.value = JSON.stringify(res)
                     }
                 })
@@ -615,8 +581,3 @@ document.addEventListener('DOMContentLoaded', () =>
 
     document.addEventListener('click', hideMessages)
 })
-
-
-
-
-
