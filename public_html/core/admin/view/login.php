@@ -54,10 +54,10 @@
 
     <?php if(!empty($_SESSION['res']['answer']))
     {
-         echo '<p style="color: red;text-align: center">' . $_SESSION['res']['answer'] . '</p>';
+        echo '<p style="color: red;text-align: center">' . $_SESSION['res']['answer'] . '</p>';
 
         unset($_SESSION['res']);
-    }?>
+    } ?>
 
     <h1>Авторизация</h1>
     <form
@@ -90,7 +90,6 @@
 </div>
 <script src="<?= PATH . ADMIN_TEMPLATE ?>js/frameworkfunctions.js"></script>
 <script>
-
     let form = document.querySelector('form');
 
     if (form)
@@ -105,15 +104,14 @@
                          data: {
                              ajax: 'token'
                          }
-                     }).then(ress =>
-                             {
-                                 if (ress)
-                                 {
-                                     form.insertAdjacentHTML('beforeend', '<input type="hidden" name="token" value="' + ress + '">');
-                                 }
+                     })
+                    .then(
+                        ress =>
+                        {
+                            if (ress) form.insertAdjacentHTML('beforeend', '<input type="hidden" name="token" value="' + ress + '">');
 
-                                 form.submit();
-                             })
+                            form.submit();
+                        })
             }
         });
     }

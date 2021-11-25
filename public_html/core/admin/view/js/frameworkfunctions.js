@@ -54,7 +54,7 @@ const Ajax = (set) =>
         {
             let xhr = new XMLHttpRequest();
             xhr.open(set.type, set.url, true);
-
+console.log(set.url);
             let contentType = false;
 
             if (typeof set.headers !== "undefined" && set.headers)
@@ -88,10 +88,8 @@ const Ajax = (set) =>
                     {
                         reject(this.response);
                     }
-
                     resolve(this.response);
                 }
-
                 reject(this.response);
             }
 
@@ -100,8 +98,6 @@ const Ajax = (set) =>
                 reject(this.response);
             }
             xhr.send(body);
-
-
         });
 
 }

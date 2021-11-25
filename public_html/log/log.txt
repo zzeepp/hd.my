@@ -30,3 +30,23 @@ Fault: 22-11-2021 11:23:08 - Неверное имя файла для подк�
 File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
 In line 35
 
+Fault: 25-11-2021 12:25:00 - Class "core\user\controller\Index.phpController" does not exist
+File C:\OpenServer\domains\hd.my\public_html\core\base\controller\BaseController.php
+In line 86
+
+Fault: 25-11-2021 12:25:46 - Некорректная директория сайта
+File C:\OpenServer\domains\hd.my\public_html\core\base\controller\RouteController.php
+In line 109
+
+Fault: 25-11-2021 12:26:42 - Некорректная директория сайта
+File C:\OpenServer\domains\hd.my\public_html\core\base\controller\RouteController.php
+In line 109
+
+Fault: 25-11-2021 12:29:17 - Некорректная директория сайта
+File C:\OpenServer\domains\hd.my\public_html\core\base\controller\RouteController.php
+In line 109
+
+Fault: 25-11-2021 12:57:46 - Некорректная директория сайта
+File C:\OpenServer\domains\hd.my\public_html\core\base\controller\RouteController.php
+In line 109
+

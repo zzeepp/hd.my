@@ -85,8 +85,6 @@ abstract class BaseController
         {
             throw new RouteException($e->getMessage());
         }
-
-
     }
 
     public function request($args)
