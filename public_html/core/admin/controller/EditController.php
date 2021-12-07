@@ -41,5 +41,4 @@ class EditController extends BaseAdmin
 
         $this->data && $this->data = $this->data[0];
     }
-
 }

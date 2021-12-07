@@ -1,52 +1,212 @@
-Fault: 05-11-2021 23:42:01 - Отсутствует шаблон - core/admin/view/login
-File C:\OpenServer\domains\hd.my\public_html\core\base\controller\BaseController.php
-In line 141
-
-Fault: 05-11-2021 23:49:01 - Отсутствует шаблон - core/admin/view/login
-File C:\OpenServer\domains\hd.my\public_html\core\base\controller\BaseController.php
-In line 141
-
-Fault: 22-11-2021 11:06:19 - Неверное имя файла для подключения - core/user/controller/LoginController
+Fault: 07-12-2021 19:53:48 - Неверное имя файла для подключения - core/user/controller/UserfilesController
 File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
 In line 35
 
-Fault: 22-11-2021 11:09:35 - Неверное имя файла для подключения - core/user/controller/LoginController
+Fault: 07-12-2021 19:59:05 - Неверное имя файла для подключения - core/user/controller/UserfilesController
 File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
 In line 35
 
-Fault: 22-11-2021 11:10:02 - Неверное имя файла для подключения - core/user/controller/LoginController
+Fault: 07-12-2021 20:17:16 - Неверное имя файла для подключения - core/user/controller/UserfilesController
 File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
 In line 35
 
-Fault: 22-11-2021 11:11:57 - Неверное имя файла для подключения - core/user/controller/LoginController
+Fault: 07-12-2021 20:23:43 - Неверное имя файла для подключения - core/user/controller/UserfilesController
 File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
 In line 35
 
-Fault: 22-11-2021 11:22:18 - Неверное имя файла для подключения - core/base/model/AuthException
+Fault: 07-12-2021 20:26:31 - Неверное имя файла для подключения - core/user/controller/UserfilesController
 File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
 In line 35
 
-Fault: 22-11-2021 11:23:08 - Неверное имя файла для подключения - core/base/model/AuthException
+Fault: 07-12-2021 20:30:57 - Неверное имя файла для подключения - core/user/controller/UserfilesController
 File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
 In line 35
 
-Fault: 25-11-2021 12:25:00 - Class "core\user\controller\Index.phpController" does not exist
+Fault: 07-12-2021 21:57:07 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 21:57:28 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 21:57:29 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 21:57:29 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 21:57:29 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 21:57:30 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 21:57:30 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 21:57:30 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 21:57:30 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:15:28 - Class "core\admin\controller\%3clink%20rel=Controller" does not exist
 File C:\OpenServer\domains\hd.my\public_html\core\base\controller\BaseController.php
 In line 86
 
-Fault: 25-11-2021 12:25:46 - Некорректная директория сайта
-File C:\OpenServer\domains\hd.my\public_html\core\base\controller\RouteController.php
-In line 109
+Fault: 07-12-2021 22:15:29 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
 
-Fault: 25-11-2021 12:26:42 - Некорректная директория сайта
-File C:\OpenServer\domains\hd.my\public_html\core\base\controller\RouteController.php
-In line 109
+Fault: 07-12-2021 22:17:58 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
 
-Fault: 25-11-2021 12:29:17 - Некорректная директория сайта
-File C:\OpenServer\domains\hd.my\public_html\core\base\controller\RouteController.php
-In line 109
+Fault: 07-12-2021 22:17:58 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
 
-Fault: 25-11-2021 12:57:46 - Некорректная директория сайта
-File C:\OpenServer\domains\hd.my\public_html\core\base\controller\RouteController.php
-In line 109
+Fault: 07-12-2021 22:17:58 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:17:58 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:05 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:05 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:05 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:05 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:21 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:21 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:22 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:22 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:26 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:26 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:26 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:28 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:28 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:18:29 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:20 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:20 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:20 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:20 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:28 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:28 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:28 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:28 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:47 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:47 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:47 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:47 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:49 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:49 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:49 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:50 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:50 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
+
+Fault: 07-12-2021 22:29:50 - Неверное имя файла для подключения - core/user/controller/UserfilesController
+File C:\OpenServer\domains\hd.my\public_html\core\base\settings\internal_settings.php
+In line 35
 

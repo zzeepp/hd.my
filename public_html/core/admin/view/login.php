@@ -26,26 +26,37 @@
             display: block;
         }
 
-        label, input {
+        label{
             display: block;
             margin: auto;
+            font-size: 30px;
         }
 
         label, h1 {
             text-align: center;
         }
 
-        input {
+        .input {
             margin-bottom: 20px;
             padding: 3px 5px;
             border: 1px solid #0077aa;
             box-shadow: 0px 5px 10px 2px rgba(122, 191, 236, 0.2);
+            height: 30px;
+            outline: none;
+            font-size: 25px;
+            letter-spacing: 0.1em;
+            display: block;
+            margin: auto;
         }
 
-        input[type=submit] {
+        .btn {
             background: #ffffff;
             padding: 5px 10px;
-
+            display: block;
+            margin: auto;
+        }
+        .block_btn{
+            margin: 10px 0px 0px 0px;
         }
     </style>
 </head>
@@ -72,6 +83,7 @@
                 name="login"
                 id="login"
                 autocomplete="off"
+                class="input"
         >
         <label
                 for="password"
@@ -81,11 +93,15 @@
                 name="password"
                 id="password"
                 autocomplete="current-password"
+                class="input"
         >
-        <input
-                type="submit"
-                value="Войти"
-        >
+        <div block_btn>
+            <input
+                    type="submit"
+                    value="Войти"
+                    class="btn"
+            >
+        </div>
     </form>
 </div>
 <script src="<?= PATH . ADMIN_TEMPLATE ?>js/frameworkfunctions.js"></script>

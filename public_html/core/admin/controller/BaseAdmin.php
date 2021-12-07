@@ -371,7 +371,7 @@ abstract class BaseAdmin extends BaseController
 
                 if($validate)
                 {
-                    if($validate[$key])
+                    if(isset($validate[$key]))
                     {
                         if($this->translate[$key]) $answer = $this->translate[$key][0];
                         else $answer = $key;
@@ -390,10 +390,10 @@ abstract class BaseAdmin extends BaseController
                             }
                         }
 
-                        if($validate[$key]['empty']) $this->emptyFields($item, $answer, $arr);
-                        if($validate[$key]['trim']) $arr[$key] = trim($item);
-                        if($validate[$key]['int']) $arr[$key] = $this->cleanNum($item);
-                        if($validate[$key]['count']) $this->countChar($item, $validate[$key]['count'], $answer, $arr);
+                        if(isset($validate[$key]['empty'])) $this->emptyFields($item, $answer, $arr);
+                        if(isset($validate[$key]['trim'])) $arr[$key] = trim($item);
+                        if(isset($validate[$key]['int'])) $arr[$key] = $this->cleanNum($item);
+                        if(isset($validate[$key]['count'])) $this->countChar($item, $validate[$key]['count'], $answer, $arr);
                     }
                 }
             }
@@ -520,8 +520,6 @@ abstract class BaseAdmin extends BaseController
                 $this->model->updateMenuPosition($this->table, 'menu_position', $where, $_POST['menu_position']);
             }
         }
-
-
     }
 
     protected function createAlias($id = false)
@@ -1078,7 +1076,7 @@ abstract class BaseAdmin extends BaseController
                 $this->createForeinProperty($item, $rootItems);
             }
         }
-        elseif($this->columns['parent_id'])
+        elseif(isset($this->columns['parent_id']))
         {
             $arr['COLUMN_NAME']            = 'parent_id';
             $arr['REFERENCED_COLUMN_NAME'] = $this->columns['id_row'];
@@ -1092,7 +1090,7 @@ abstract class BaseAdmin extends BaseController
 
     protected function createMenuPosition($settings = false)
     {
-        if($this->columns['menu_position'])
+        if(isset($this->columns['menu_position']))
         {
             if(!$settings) $settings = Settings::instance();
 
