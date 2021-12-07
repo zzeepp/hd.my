@@ -54,7 +54,7 @@ const Ajax = (set) =>
         {
             let xhr = new XMLHttpRequest();
             xhr.open(set.type, set.url, true);
-console.log(set.url);
+
             let contentType = false;
 
             if (typeof set.headers !== "undefined" && set.headers)
@@ -99,7 +99,6 @@ console.log(set.url);
             }
             xhr.send(body);
         });
-
 }
 
 function isEmpty(arr)
@@ -126,12 +125,12 @@ Element.prototype.slideToggle = function (time, callback)
 
     if (getComputedStyle(this)['display'] === 'none')
     {
-        this.style.transition = null
+        this.style.transition = null;
         this.style.overflow   = 'hidden';
         this.style.maxHeight  = 0;
-        this.style.display    = 'block'
-        this.style.transition = time + 'ms'
-        this.style.maxHeight  = this.scrollHeight + 'px'
+        this.style.display    = 'block';
+        this.style.transition = time + 'ms';
+        this.style.maxHeight  = this.scrollHeight + 'px';
 
         setTimeout(
             () =>
